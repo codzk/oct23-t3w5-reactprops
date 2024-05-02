@@ -13,6 +13,7 @@ let favouriteMovies = [
     "Dune",
   
     "Hot Fuzz",
+    "",
   
     "Anchorman",
   
@@ -21,6 +22,7 @@ let favouriteMovies = [
     "Shrek",
   
     "Pokemon",
+    "",
   
     "Blazing Saddles",
   
@@ -31,6 +33,7 @@ let favouriteMovies = [
     "The good, the bad, and the ugly",
   
     "Robocop",
+    "",
   
     "Bladerunner",
   
@@ -46,7 +49,21 @@ export default function MovieList(){
     
     
     <section>
-        {favouriteMovies.map((movie, index) =>{
+        {favouriteMovies.map((movie, index) => {
+
+            // if (movie && movie.length === 0){
+
+            // }
+            if (movie.length !==0){
+                return <MovieCard key={movie + "-" + index} elephant={movie}/>;
+            }
+
+
+            if (movie.length === 0){
+                return null;
+
+
+            }
             return <MovieCard key={movie + "-" + index} elephant = {movie}/>
         })}
         
